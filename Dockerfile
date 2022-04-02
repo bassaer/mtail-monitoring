@@ -12,9 +12,9 @@ RUN apt-get update && \
     yarn install && \
     yarn build
 
+ENV TZ=Asia/Tokyo
 ENV PORT=80
+
 EXPOSE 80
 
 CMD ["node", "dist/server.js"]
-
-
