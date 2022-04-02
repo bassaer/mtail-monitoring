@@ -14,7 +14,6 @@ const stream = {
 app.use(morgan('short', { stream }));
 
 app.get('/', (req, res) => {
-
   res.send("OK");
 });
 
