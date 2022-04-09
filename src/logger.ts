@@ -1,3 +1,4 @@
+import fs from 'fs';
 import winston, { format, transports } from 'winston';
 
 const logger = winston.createLogger({
@@ -9,7 +10,9 @@ const logger = winston.createLogger({
     })
   ),
   transports: [
-    new transports.Console()
+    new transports.Stream({
+      stream: fs.createWriteStream('./app.log')
+    })
   ],
 });
 
