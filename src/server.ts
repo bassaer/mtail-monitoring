@@ -14,6 +14,9 @@ app.use(morgan('short', {
 }));
 
 app.get('/', (req, res) => {
+  if (req.query['error']) {
+    logger.error(`error-${req.query.error}`);
+  }
   res.send("OK");
 });
 
