@@ -5,3 +5,20 @@ services:
     container_name: node-server
     ports:
       - '3000:80'
+    volumes:
+      - /usr/app
+  mtail:
+    build: ./mtail/
+    container_name: mtail
+    ports:
+      - 3903:3903
+    command:
+      - -logtostderr
+      - -progs
+      - /progs/linecount.mtail
+      - -logs
+      - /usr/app/app.log
+    volumes:
+      - ./mtail/examples/linecount.mtail:/progs/linecount.mtail:ro
+    volumes_from:
+      - app:ro

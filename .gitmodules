@@ -1,0 +1,3 @@
+[submodule "mtail"]
+	path = mtail
+	url = https://github.com/google/mtail.git
