@@ -15,10 +15,10 @@ services:
     command:
       - -logtostderr
       - -progs
-      - /progs/linecount.mtail
+      - /progs/app.mtail
       - -logs
       - /usr/app/app.log
     volumes:
-      - ./mtail/examples/linecount.mtail:/progs/linecount.mtail:ro
+      - ./progs/app.mtail:/progs/app.mtail:ro
     volumes_from:
       - app:ro

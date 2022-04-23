@@ -1,0 +1,11 @@
+counter lines_total
+counter error_total
+
+/$/ {
+  lines_total++
+}
+
+/ERROR/ {
+  error_total++
+}
+
