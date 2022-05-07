@@ -22,3 +22,13 @@ services:
       - ./progs/app.mtail:/progs/app.mtail:ro
     volumes_from:
       - app:ro
+  prometheus:
+    image: prom/prometheus
+    container_name: prometheus
+    volumes:
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+      - ./prometheus/rules.yml:/etc/prometheus/rules.yml
+    ports:
+      - 9090:9090
+    environment:
+      - TZ=Asia/Tokyo
